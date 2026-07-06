@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- Exercise 6: Enable Component Scanning for com.library package -->
+    <context:component-scan base-package="com.library" />
+
+    <!-- Exercise 3 & 8: Enable AspectJ auto-proxying for AOP -->
+    <aop:aspectj-autoproxy />
+
+    <!--
+        Exercise 1 & 5: Define beans for BookService and BookRepository.
+        NOTE: With component scanning enabled (Exercise 6), these XML bean
+        definitions are optional since @Service and @Repository annotations
+        handle bean creation. They are kept here for reference/learning.
+    -->
+
+    <!--
+    <bean id="bookRepository" class="com.library.repository.BookRepository" />
+
+    Exercise 2 & 5: Setter Injection - Wire BookRepository into BookService
+    <bean id="bookServiceSetter" class="com.library.service.BookService">
+        <property name="bookRepository" ref="bookRepository" />
+    </bean>
+
+    Exercise 7: Constructor Injection
+    <bean id="bookServiceConstructor" class="com.library.service.BookService">
+        <constructor-arg ref="bookRepository" />
+    </bean>
+    -->
+
+</beans>
